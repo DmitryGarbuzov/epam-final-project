@@ -1,0 +1,21 @@
+.page__cell {
+    background: rgba(114, 18, 19, 1.0);
+    background: -webkit-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: -moz-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    min-height: calc(100% - 100px);
+    padding-bottom: 100px;
+}
+
+.log_out {
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0);
+    float: right;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
+    margin-right: 0.625rem;
+}

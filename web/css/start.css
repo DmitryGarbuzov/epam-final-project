@@ -1,0 +1,206 @@
+.page__cell {
+    height: 37.69rem;
+}
+
+.Slider {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 47.065rem;
+}
+
+.image {
+    width: 100%;
+    height: 47.065rem;
+    filter: brightness(30%);
+}
+
+.aboutus {
+    position: relative;
+    z-index: 1;
+    margin-top: 9.375rem;
+}
+h1 {
+    text-align: center;
+    margin: auto;
+    font-family: 'Century Gothic', sans-serif;
+    color: gainsboro;
+    font-size: 2.25rem;
+}
+h2 {
+    font-family: 'Century Gothic', sans-serif;
+    color: gainsboro;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.about-doskort {
+    max-width: 75rem;
+    margin: auto;
+    padding-top: 1.875rem;
+}
+.first-block {
+    z-index: 1;
+    position: relative;
+    animation: left-animation 2s;
+}
+.second-block {
+    z-index: 1;
+    position: relative;
+    animation: right-animation 2s;
+}
+@keyframes left-animation {
+    0% {
+        left: -9.375rem;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes right-animation {
+    0% {
+        right: -9.375rem;
+    }
+    100% {
+        right: 0;
+    }
+}
+p {
+    font-family: 'Century Gothic', sans-serif;
+    color: gainsboro;
+    font-size: 1.5rem;
+    margin: 0.625rem;
+}
+
+.signup {
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0);
+    float: right;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
+    margin-right: 0.625rem;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.cancelbtn, .signupbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+input {
+    outline: none;
+}
+
+input:valid {
+    border-color: #4CAF50;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.message {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 1rem;
+    color: red;
+}
+
+.container b {
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: normal;
+}

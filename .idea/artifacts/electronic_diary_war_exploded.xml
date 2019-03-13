@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="electronic diary:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="electronic diary/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="electronic diary" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="annotations-api" />
+          <element id="library" level="project" name="log4j-api-2.11.0" />
+          <element id="library" level="project" name="mail-1.4.5" />
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="activation-1.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+}
+
+.header {
+    width: 75rem;
+    padding: 0.3125rem;
+    position: fixed;
+    top: 0;
+    left: calc(50% - 37.5rem);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 0.625rem 0.625rem;
+    animation: header-animation 2s;
+}
+
+.header__logo {
+    width: 3.75rem;
+    border-right: 2px solid #ccc;
+    float: left;
+    margin: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+}
+
+.name {
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    padding-left: 4px;
+    font-size: 2.75rem;
+    color: black;
+}
+
+@keyframes header-animation {
+    from {
+        top: -3.6875rem;
+    }
+    to {
+        top: 0;
+    }
+}
+
+#language {
+    position: fixed;
+    top: 0;
+    width: 100px;
+    height: 65px;
+    right: calc(50% - 45rem);
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 0.625rem 0.625rem;
+    animation: header-animation 2s;
+    text-align: center;
+}
+
+#language p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+
+#language form {
+    width: 48%;
+    height: 40%;
+    margin: 0;
+    display: inline-block;
+}
+
+#language input {
+    width: 60%;
+    padding: 0 10px 10px 10px;
+    border: none;
+    margin: 0;
+    box-sizing: initial;
+}
+
+.footer {
+    height: 3.4375rem;
+    background-color: #1a1a1a;
+}
+
+.block-1, .block-2 {
+    vertical-align: bottom;
+    margin-left: 1.2rem;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+}
+
+.block-1 {
+    padding-top: 5px;
+    font-size: 1.2rem;
+}
+
+.block-2 {
+    font-size: 0.8rem;
+}
+
+.cf:before, .cf:after {
+    content:" ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+.menu {
+    list-style:none;
+    padding-top: 100px;
+    padding-left: 0;
+    margin: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.menu > li {
+    background: #222f3e;
+    float: left;
+    position: relative;
+    -webkit-transform: skewX(25deg);
+    z-index: 2;
+}
+.menu a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Arial, Helvetica;
+    font-size: 14px;
+}
+.menu li:hover {
+    background: #e74c3c;
+}
+.menu > li > a {
+    -webkit-transform: skewX(-25deg);
+    padding: 1em 2em;
+}
+
+.submenu {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    -webkit-transform: skewX(-25deg);
+    -webkit-transform-origin: left top;
+}
+.submenu li {
+    background-color: #222f3e;
+    position: relative;
+    overflow: hidden;
+}
+.submenu > li > a {
+    padding: 1em 2em;
+}
+.submenu > li::after {
+    content:'';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+.submenu > li:nth-child(odd) {
+    -webkit-transform: skewX(-25deg) translateX(0);
+}
+.submenu > li:nth-child(odd) > a {
+    -webkit-transform: skewX(25deg);
+}
+.submenu > li:nth-child(odd)::after {
+    right: -50%;
+    -webkit-transform: skewX(-25deg) rotate(3deg);
+}
+
+.submenu > li:nth-child(even) {
+    -webkit-transform: skewX(25deg) translateX(0);
+}
+.submenu > li:nth-child(even) > a {
+    -webkit-transform: skewX(-25deg);
+}
+.submenu > li:nth-child(even)::after {
+    left: -50%;
+    -webkit-transform: skewX(25deg) rotate(3deg);
+}
+
+.submenu, .submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+.submenu li {
+    transition: .2s ease -webkit-transform;
+}
+.menu > li:hover .submenu, .menu > li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+.menu > li:hover .submenu li:nth-child(even) {
+    -webkit-transform: skewX(25deg) translateX(15px);
+}
+.menu > li:hover .submenu li:nth-child(odd) {
+    -webkit-transform: skewX(-25deg) translateX(-15px);
+}
+
+
+.log_out {
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0);
+    float: right;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
+    margin-right: 0.625rem;
+}
+
+#spoiler {
+    display: none;
+}
+
+#add_parent_block, #add_subject_block, #add_grade_block,
+#add_student_block, #add_teacher_block, #delete_parent_block,
+#delete_teacher_block, #delete_student_block, #delete_grade_block,
+#delete_subject_block, #recover_grade_block, #recover_student_block,
+#recover_subject_block, #add_lesson_block {
+    background: #2b3b4e;
+    position: relative;
+    -webkit-transform: skewX(-15deg);
+    margin: auto;
+    display: none;
+    width: 55%;
+    list-style:none;
+}
+
+.content {
+    background: #2b3b4e;
+    padding: 50px;
+    width: 60%;
+    -webkit-transform: skewX(15deg);
+    margin: 100px auto auto auto;
+    color: white;
+    font-family: Arial, Helvetica;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+input:valid {
+    border-color: rgb(76, 175, 80);
+    border-width:2px;
+}
+
+.register, .find_lesson, .add_lesson {
+    background-color: #e74c3c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+input, select, button {
+    outline: none;
+    user-select: none;
+}
+
+#modal {
+    position: fixed;
+    z-index: 3;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#modal-content {
+    border-radius: 25px;
+    text-align: center;
+    margin: 160px auto auto auto;
+    background-color: #222f3e;
+    width: 40%;
+    min-height: 100px;
+    padding-top: 60px;
+}
+
+#modal-content p {
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica;
+    width: 90%;
+}
+
+li form {
+    display: none;
+}

@@ -1,0 +1,8 @@
+.page__cell {
+    background: rgba(114, 18, 19, 1.0);
+    background: -webkit-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: -moz-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    min-height: calc(100% - 100px);
+    padding-bottom: 100px;
+}
