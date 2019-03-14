@@ -24,4 +24,28 @@ public class TimetableService {
             throw new ServiceException(e);
         }
     }
+
+    public boolean isValid(Date date, long gradeId, long subjectId) throws ServiceException {
+        try (TimetableDao timetableDao = new TimetableDao()){
+            return timetableDao.isValid(date, gradeId, subjectId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    public boolean isPresent(Date date, long gradeId, long subjectId) throws ServiceException {
+        try (TimetableDao timetableDao = new TimetableDao()) {
+            return timetableDao.isPresent(date, gradeId, subjectId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    public void delete(Date date, long gradeId, long subjectId) throws ServiceException {
+        try (TimetableDao timetableDao = new TimetableDao()) {
+            timetableDao.delete(date, gradeId, subjectId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }

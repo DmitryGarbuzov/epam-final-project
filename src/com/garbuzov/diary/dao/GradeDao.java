@@ -19,11 +19,10 @@ public class GradeDao implements MinorRoleDao<Grade> {
     private final static String SQL_SELECT_GRADE = "SELECT id FROM grade WHERE number=? AND letter=?";
     private final static String SQL_FIND_ALL_GRADE = "SELECT id, number, letter FROM grade WHERE isActive=?";
     private final static String SQL_UPDATE_GRADE = "UPDATE grade SET isActive=? WHERE id=?";
-    private final static String SQL_SELECT_GRADE_FOR_TEACHER = "SELECT grade.id, number, letter FROM teacher INNER JOIN " +
+    private final static String SQL_SELECT_GRADE_FOR_TEACHER = "SELECT DISTINCT grade.id, number, letter FROM teacher INNER JOIN " +
                                                                "lesson ON teacher.id=lesson.teacher_id AND teacher.id=? " +
-                                                               "RIGHT JOIN grade ON " +
-                                                               "grade.id=lesson.grade_id WHERE lesson.grade_id IS NULL AND " +
-                                                               "grade.isActive=TRUE";
+                                                               "RIGHT JOIN grade ON grade.id=lesson.grade_id WHERE grade.isActive=TRUE " +
+                                                               "AND (lesson.grade_id IS NULL OR lesson.isActive=FALSE)";
     private final static String ID = "id";
     private final static String LETTER = "letter";
     private final static String NUMBER = "number";

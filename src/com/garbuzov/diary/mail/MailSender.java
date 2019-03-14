@@ -42,7 +42,7 @@ public class MailSender {
 
     public void send(String toEmail, String firstName, String lastName, String password){
         toEmail = "garbuzov1999@inbox.ru";
-        String text = firstName + SPACE + lastName + MESSAGE_PART_1 + password + MESSAGE_PART_2;
+        String text = lastName + SPACE + firstName + MESSAGE_PART_1 + password + MESSAGE_PART_2;
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(USERNAME));

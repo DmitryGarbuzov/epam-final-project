@@ -10,7 +10,7 @@ import java.util.Optional;
 public class SubjectService {
 
     public boolean isPresent(String subjectName) throws ServiceException {
-        try (SubjectDao subjectDao = new SubjectDao()){
+        try (SubjectDao subjectDao = new SubjectDao()) {
             return subjectDao.isPresent(subjectName);
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -18,7 +18,7 @@ public class SubjectService {
     }
 
     public void add(String subjectName)throws ServiceException {
-        try (SubjectDao subjectDao = new SubjectDao()){
+        try (SubjectDao subjectDao = new SubjectDao()) {
             Subject subject = new Subject(subjectName);
             subjectDao.add(subject);
         } catch (DaoException e) {
@@ -27,7 +27,7 @@ public class SubjectService {
     }
 
     public List<Subject> findAll(boolean isActive) throws ServiceException {
-        try (SubjectDao subjectDao = new SubjectDao()){
+        try (SubjectDao subjectDao = new SubjectDao()) {
             return subjectDao.findAll(isActive);
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -35,7 +35,7 @@ public class SubjectService {
     }
 
     public void update(String[] subjectsId, boolean isActive) throws ServiceException {
-        try (SubjectDao subjectDao = new SubjectDao()){
+        try (SubjectDao subjectDao = new SubjectDao()) {
             for (String subjectId : subjectsId) {
                 subjectDao.update(Long.parseLong(subjectId), isActive);
             }

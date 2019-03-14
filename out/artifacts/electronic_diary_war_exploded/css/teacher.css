@@ -10,47 +10,59 @@
 #journal_block {
     background: #2b3b4e;
     position: relative;
-    -webkit-transform: skewX(-15deg);
+    -webkit-transform: skewX(-10deg);
     margin: auto;
-    width: 75%;
+    width: 80%;
     list-style:none;
+    display: none;
 }
 
 #journal_block .content {
     padding: 60px 0 60px 0;
     width: 75%;
+    -webkit-transform: skewX(10deg);
 }
 
 .delete_lesson, .find_lesson, .add_lesson{
     width: 150px;
     margin-right: 20px;
     display: inline-block;
+    border-radius: 0;
 }
 
 .find_lesson {
     background-color: #ffdb58;
 }
 
-.delete_lesson, .add_lesson {
+.add_lesson {
     background-color: #4CAF50;
+}
+
+.delete_lesson {
+    background-color: #e74c3c;
 }
 
 table {
     margin-top: 50px;
     display: inline-block;
-    border-radius: 10px;
-    border: 1px solid #000;
+    border-collapse: collapse;
 }
 
-table, th, td {
+table tr {
+    border-bottom: 2px solid #646664;
+    border-top: 2px solid #646664;
+}
+
+#data_row {
+    border-top: 0;
 }
 
 td {
-    padding: 5px;
-    color: #c4ac93;
+    padding: 8px;
+    color: #cccccc;
 }
 
-td.mark {
+td.mark, td.homework{
     text-align: center;
 }
 
@@ -60,33 +72,28 @@ td p {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
-.mark_div {
-    color: #c4ac93;
-    background-color: white;
+.mark_div, .homework_div {
+    color: #2b3b4e;
     width: 37.2px;
     height: 18.4px;
+    border-radius: 3px;
 }
 
-.cancelbtn, .signupbtn {
-    background-color: #4CAF50;
+.cancelbtn {
+    background-color: #e74c3c;
     color: white;
-    padding: 14px 20px;
+    padding: 10px 18px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: auto;
 }
 
 .button:hover {
     opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #e74c3c;
 }
 
 span.psw {
@@ -123,16 +130,32 @@ span.psw {
     cursor: pointer;
 }
 
-#add_lesson_block {
+#add_lesson_block, #delete_lesson_block, #add_mark_block {
     display: block;
     -webkit-transform: skewX(15deg);
 }
 
-#add_lesson_block .content {
+#add_lesson_block .content, #delete_lesson_block .content, #add_mark_block .content {
     -webkit-transform: skewX(-15deg);
 }
 
 input:valid {
     border: none;
 }
+
+#modal {
+    display: none;
+}
+
+.homework_row {
+    margin-top: 15px;
+}
+
+.spacer {
+    height: 15px;
+}
+
+
+
+
 

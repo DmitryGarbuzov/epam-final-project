@@ -7,7 +7,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class TimetableAddCommand implements Command {
+public class TimetableDeletionCommand implements Command {
+
 
     private static TimetableService timetableService = new TimetableService();
     private final static String TEACHER_PAGE_PATH = "jsp/teacher.jsp";
@@ -19,7 +20,6 @@ public class TimetableAddCommand implements Command {
         Transition transition = new Transition();
         transition.setPage(TEACHER_PAGE_PATH);
         transition.setRedirectType();
-        long lessonId = Long.parseLong(request.getParameter("lessonId"));
         long gradeId = Long.parseLong(request.getParameter("gradeId"));
         long subjectId = Long.parseLong(request.getParameter("subjectId"));
         String date = request.getParameter("date");
@@ -27,8 +27,8 @@ public class TimetableAddCommand implements Command {
         LocalDate localDate = LocalDate.parse(date, formatter);
         Date sqlDate = Date.valueOf(localDate);
         try {
-            if (timetableService.isValid(sqlDate, gradeId, subjectId)) {
-                timetableService.add(lessonId, sqlDate);
+            if (timetableService.isPresent(sqlDate, gradeId, subjectId)) {
+                timetableService.delete(sqlDate, gradeId, subjectId);
                 transition.setMessage(FIND_JOURNAL);
             } else {
                 transition.setMessage(WRONG_DATE);

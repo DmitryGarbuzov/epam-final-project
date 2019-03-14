@@ -34,7 +34,7 @@ public class ParentService {
     }
 
     public List<Parent> findAll() throws ServiceException {
-        try (ParentDao parentDao = new ParentDao()){
+        try (ParentDao parentDao = new ParentDao()) {
             return parentDao.findAll();
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -43,7 +43,7 @@ public class ParentService {
 
     public void delete(String[] usersId) throws ServiceException {
         try (UserDao userDao = new UserDao();
-             ParentDao parentDao = new ParentDao()){
+             ParentDao parentDao = new ParentDao()) {
             for (String userId : usersId) {
                 parentDao.delete(Long.parseLong(userId));
                 userDao.delete(Long.parseLong(userId));
@@ -54,7 +54,7 @@ public class ParentService {
     }
 
     public boolean hasActiveStudent(long userId) throws ServiceException {
-        try (ParentDao parentDao = new ParentDao()){
+        try (ParentDao parentDao = new ParentDao()) {
             return parentDao.hasActiveStudent(userId);
         } catch (DaoException e) {
             throw new ServiceException(e);

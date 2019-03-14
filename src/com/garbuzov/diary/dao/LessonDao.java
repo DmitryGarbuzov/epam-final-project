@@ -4,8 +4,6 @@ import com.garbuzov.diary.connection.ConnectionPool;
 import com.garbuzov.diary.entity.Grade;
 import com.garbuzov.diary.entity.Subject;
 import com.garbuzov.diary.exception.DaoException;
-import org.apache.logging.log4j.util.PropertySource;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,14 +14,14 @@ public class LessonDao implements AutoCloseable {
 
     private Connection connection;
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
-    private final static String SQL_SELECT_ADMIN = "SELECT id FROM administrator WHERE user_id=?";
-    private final static String ID = "id";
-    private final static String SQL_DELETE_LESSON = "DELETE FROM lesson WHERE teacher_id=? AND grade_id=?";
+    private final static String SQL_UPDATE_DELETE_LESSON = "UPDATE lesson SET isActive=FALSE WHERE teacher_id=? AND grade_id=?";
+    private final static String SQL_UPDATE_INSERT_LESSON = "UPDATE lesson SET isActive=TRUE WHERE teacher_id=? AND grade_id=? AND subject_id=?";
     private final static String SQL_INSERT_LESSON = "INSERT INTO lesson (teacher_id, grade_id, subject_id) VALUES (?, ?, ?)";
     private final static String SQL_SELECT_LESSON_ID = "SELECT id FROM lesson WHERE grade_id=? AND teacher_id=? AND subject_id=?";
     private final static String SQL_FIND_ALL_GRADES = "SELECT grade.id, subject.id, number, letter, name FROM lesson INNER JOIN " +
                                                       "grade ON grade.id=lesson.grade_id INNER JOIN subject ON lesson.subject_id=subject.id " +
-                                                      "WHERE lesson.teacher_id=? AND subject.isActive=TRUE AND grade.isActive=TRUE";
+                                                      "WHERE lesson.teacher_id=? AND subject.isActive=TRUE AND grade.isActive=TRUE " +
+                                                      "AND lesson.isActive=TRUE";
 
     public LessonDao() {
         connection = connectionPool.getConnection();
@@ -74,10 +72,26 @@ public class LessonDao implements AutoCloseable {
         }
     }
 
-    public void delete(long teacherId, long gradeId) throws DaoException {
-        try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_LESSON)){
+    public void update(long teacherId, long gradeId) throws DaoException {
+        try (PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_DELETE_LESSON)){
             statement.setLong(1, teacherId);
             statement.setLong(2, gradeId);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException exception) {
+                throw  new DaoException(exception);
+            }
+            throw new DaoException(e);
+        }
+    }
+
+    public void update(long teacherId, long gradeId, long subjectId) throws DaoException {
+        try (PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_INSERT_LESSON)){
+            statement.setLong(1, teacherId);
+            statement.setLong(2, gradeId);
+            statement.setLong(3, subjectId);
             statement.executeUpdate();
         } catch (SQLException e) {
             try {

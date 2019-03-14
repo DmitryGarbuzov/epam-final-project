@@ -1,7 +1,5 @@
 package com.garbuzov.diary.entity;
 
-import com.garbuzov.diary.service.LessonService;
-
 import java.sql.Date;
 
 public class LessonDate {

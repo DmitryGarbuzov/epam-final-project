@@ -1,5 +1,5 @@
 
-var blockList = ["#add_grade_block", "#journal"];
+var blockList = ["#add_grade_block", "#journal_block"];
 
 $(function () {
     $("#lesson_deletion").click(function(){
@@ -13,17 +13,31 @@ $(function () {
 $(document).ready(function() {
     $('.select2').select2();
 
-    var elements = document.querySelectorAll('.mark_div');
-    for (var i = 0; i < elements.length; i += 1) {
-        var text = elements[i].innerText;
+    var marks = document.querySelectorAll('.mark_div');
+    for (var i = 0; i < marks.length; i += 1) {
+        var text = marks[i].innerText;
         if (text == 0) {
-            elements[i].innerHTML = "";
-            elements[i].style.backgroundColor = "green";
+            marks[i].innerHTML = "";
+            marks[i].style.backgroundColor = "#4CAF50";
         } else if (text == -1) {
-            elements[i].innerHTML = "н";
-            elements[i].style.backgroundColor = "red";
+            marks[i].innerHTML = "н";
+            marks[i].style.backgroundColor = "#e74c3c";
+        } else if (text <=4 ){
+            marks[i].style.backgroundColor = "#ffdb58";
         } else {
-            elements[i].style.backgroundColor = "green";
+            marks[i].style.backgroundColor = "#4CAF50";
+        }
+    }
+
+    var homework = document.querySelectorAll('.homework_div');
+    for (i = 0; i < homework.length; i += 1) {
+        text = homework[i].innerText;
+        if (text != "") {
+            homework[i].innerHTML = "+";
+            homework[i].style.backgroundColor = "#4CAF50";
+        } else {
+            homework[i].innerHTML = "-";
+            homework[i].style.backgroundColor = "#e74c3c";
         }
     }
 });
@@ -33,9 +47,17 @@ window.onpopstate = function() {
     history.go(1);
 };
 
-var modal = document.getElementById('add_lesson_modal');
+var modal1 = document.getElementById('add_lesson_modal');
+var modal2 = document.getElementById('delete_lesson_modal');
+var modal3 = document.getElementById('add_mark_modal');
 window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (event.target === modal1) {
+        modal1.style.display = "none";
+    }
+    if (event.target === modal2) {
+        modal2.style.display = "none";
+    }
+    if (event.target === modal3) {
+        modal3.style.display = "none";
     }
 };

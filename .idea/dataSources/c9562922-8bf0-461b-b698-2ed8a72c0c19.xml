@@ -1003,7 +1003,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="235" name="lesson_id">
+    <column id="257" parent="235" name="date_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1015,8 +1015,8 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="259" parent="235" name="homework_lesson_id_fk">
-      <ColNames>lesson_id</ColNames>
+    <index id="259" parent="235" name="homework_timetable_id_fk">
+      <ColNames>date_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="260" parent="235" name="PRIMARY">
@@ -1024,10 +1024,10 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="261" parent="235" name="homework_lesson_id_fk">
-      <ColNames>lesson_id</ColNames>
+    <foreign-key id="261" parent="235" name="homework_timetable_id_fk">
+      <ColNames>date_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
-      <RefTableName>lesson</RefTableName>
+      <RefTableName>timetable</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="262" parent="236" name="id">
@@ -1055,372 +1055,379 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="266" parent="236" name="lesson_teacher_id_fk">
+    <column id="266" parent="236" name="isActive">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="267" parent="236" name="lesson_teacher_id_fk">
       <ColNames>teacher_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="267" parent="236" name="lesson_subject_id_fk">
+    <index id="268" parent="236" name="lesson_subject_id_fk">
       <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="268" parent="236" name="lesson_grade_id_fk">
+    <index id="269" parent="236" name="lesson_grade_id_fk">
       <ColNames>grade_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="269" parent="236" name="PRIMARY">
+    <key id="270" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="270" parent="236" name="lesson_teacher_id_fk">
+    <foreign-key id="271" parent="236" name="lesson_teacher_id_fk">
       <ColNames>teacher_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>teacher</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="271" parent="236" name="lesson_subject_id_fk">
+    <foreign-key id="272" parent="236" name="lesson_subject_id_fk">
       <ColNames>subject_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>subject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="272" parent="236" name="lesson_grade_id_fk">
+    <foreign-key id="273" parent="236" name="lesson_grade_id_fk">
       <ColNames>grade_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>grade</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="273" parent="237" name="id">
+    <column id="274" parent="237" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="237" name="mark">
+    <column id="275" parent="237" name="mark">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="237" name="data_id">
+    <column id="276" parent="237" name="date_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="237" name="student_id">
+    <column id="277" parent="237" name="student_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="277" parent="237" name="mark_timetable_id_fk">
-      <ColNames>data_id</ColNames>
+    <index id="278" parent="237" name="mark_timetable_id_fk">
+      <ColNames>date_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="278" parent="237" name="table_name_student_id_fk">
+    <index id="279" parent="237" name="table_name_student_id_fk">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="279" parent="237" name="PRIMARY">
+    <key id="280" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="280" parent="237" name="mark_timetable_id_fk">
-      <ColNames>data_id</ColNames>
+    <foreign-key id="281" parent="237" name="mark_timetable_id_fk">
+      <ColNames>date_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>timetable</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="281" parent="237" name="table_name_student_id_fk">
+    <foreign-key id="282" parent="237" name="table_name_student_id_fk">
       <ColNames>student_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="282" parent="238" name="id">
+    <column id="283" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="238" name="user_id">
+    <column id="284" parent="238" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="284" parent="238" name="parent_user_id_fk">
+    <index id="285" parent="238" name="parent_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="285" parent="238" name="PRIMARY">
+    <key id="286" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="286" parent="238" name="parent_user_id_fk">
+    <foreign-key id="287" parent="238" name="parent_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="287" parent="239" name="id">
+    <column id="288" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="239" name="parent_id">
+    <column id="289" parent="239" name="parent_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="239" name="student_id">
+    <column id="290" parent="239" name="student_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="290" parent="239" name="parent_student_parent_id_fk">
+    <index id="291" parent="239" name="parent_student_parent_id_fk">
       <ColNames>parent_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="291" parent="239" name="parent_student_student_id_fk">
+    <index id="292" parent="239" name="parent_student_student_id_fk">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="292" parent="239" name="PRIMARY">
+    <key id="293" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="293" parent="239" name="parent_student_parent_id_fk">
+    <foreign-key id="294" parent="239" name="parent_student_parent_id_fk">
       <ColNames>parent_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>parent</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="294" parent="239" name="parent_student_student_id_fk">
+    <foreign-key id="295" parent="239" name="parent_student_student_id_fk">
       <ColNames>student_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="295" parent="240" name="id">
+    <column id="296" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="240" name="first_name">
+    <column id="297" parent="240" name="first_name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="240" name="last_name">
+    <column id="298" parent="240" name="last_name">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="240" name="grade_id">
+    <column id="299" parent="240" name="grade_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="240" name="isActive">
+    <column id="300" parent="240" name="isActive">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="300" parent="240" name="student_grade_id_fk">
+    <index id="301" parent="240" name="student_grade_id_fk">
       <ColNames>grade_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="301" parent="240" name="PRIMARY">
+    <key id="302" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="302" parent="240" name="student_grade_id_fk">
+    <foreign-key id="303" parent="240" name="student_grade_id_fk">
       <ColNames>grade_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>grade</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="303" parent="241" name="id">
+    <column id="304" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="241" name="name">
+    <column id="305" parent="241" name="name">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="241" name="isActive">
+    <column id="306" parent="241" name="isActive">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="306" parent="241" name="PRIMARY">
+    <key id="307" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="307" parent="242" name="id">
+    <column id="308" parent="242" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="242" name="user_id">
+    <column id="309" parent="242" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="309" parent="242" name="teacher_user_id_fk">
+    <index id="310" parent="242" name="teacher_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="310" parent="242" name="PRIMARY">
+    <key id="311" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="311" parent="242" name="teacher_user_id_fk">
+    <foreign-key id="312" parent="242" name="teacher_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="312" parent="243" name="id">
+    <column id="313" parent="243" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="243" name="teacher_id">
+    <column id="314" parent="243" name="teacher_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="243" name="subject_id">
+    <column id="315" parent="243" name="subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="315" parent="243" name="teacher_subject_teacher_id_fk">
+    <index id="316" parent="243" name="teacher_subject_teacher_id_fk">
       <ColNames>teacher_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="316" parent="243" name="teacher_subject_subject_id_fk">
+    <index id="317" parent="243" name="teacher_subject_subject_id_fk">
       <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="317" parent="243" name="PRIMARY">
+    <key id="318" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="318" parent="243" name="teacher_subject_teacher_id_fk">
+    <foreign-key id="319" parent="243" name="teacher_subject_teacher_id_fk">
       <ColNames>teacher_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>teacher</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="319" parent="243" name="teacher_subject_subject_id_fk">
+    <foreign-key id="320" parent="243" name="teacher_subject_subject_id_fk">
       <ColNames>subject_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>subject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="320" parent="244" name="id">
+    <column id="321" parent="244" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="244" name="date">
+    <column id="322" parent="244" name="date">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="244" name="lesson_id">
+    <column id="323" parent="244" name="lesson_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="323" parent="244" name="timetable_lesson_id_fk">
+    <index id="324" parent="244" name="timetable_lesson_id_fk">
       <ColNames>lesson_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="324" parent="244" name="PRIMARY">
+    <key id="325" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="325" parent="244" name="timetable_lesson_id_fk">
+    <foreign-key id="326" parent="244" name="timetable_lesson_id_fk">
       <ColNames>lesson_id</ColNames>
       <RefSchemaName>diary</RefSchemaName>
       <RefTableName>lesson</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="326" parent="245" name="id">
+    <column id="327" parent="245" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="245" name="email">
+    <column id="328" parent="245" name="email">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="245" name="password">
+    <column id="329" parent="245" name="password">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="245" name="first_name">
+    <column id="330" parent="245" name="first_name">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="245" name="last_name">
+    <column id="331" parent="245" name="last_name">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="331" parent="245" name="PRIMARY">
+    <key id="332" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

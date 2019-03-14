@@ -30,6 +30,8 @@ public class CommandMap {
         enumMap.put(CommandType.LESSON_DELETION, new LessonDeletionCommand());
         enumMap.put(CommandType.FIND_JOURNAL, new FindJournalCommand());
         enumMap.put(CommandType.TIMETABLE_ADD, new TimetableAddCommand());
+        enumMap.put(CommandType.TIMETABLE_DELETION, new TimetableDeletionCommand());
+        enumMap.put(CommandType.MARK_ADD, new MarkAddCommand());
     }
 
     private CommandMap() {}

@@ -1,7 +1,6 @@
 package com.garbuzov.diary.service;
 
 import com.garbuzov.diary.dao.LessonDao;
-import com.garbuzov.diary.dao.TeacherDao;
 import com.garbuzov.diary.entity.Grade;
 import com.garbuzov.diary.entity.Subject;
 import com.garbuzov.diary.exception.DaoException;
@@ -15,7 +14,12 @@ public class LessonService {
     public void add(long teacherId, long gradeId, String[] subjectsId) throws ServiceException {
         try (LessonDao lessonDao = new LessonDao()){
             for (String subjectId : subjectsId) {
-                lessonDao.add(teacherId, gradeId, Long.parseLong(subjectId));
+                long subjId = Long.parseLong(subjectId);
+                if (lessonDao.findLessonId(gradeId, teacherId, subjId) != 0) {
+                    lessonDao.update(teacherId, gradeId, subjId);
+                } else {
+                    lessonDao.add(teacherId, gradeId, subjId);
+                }
             }
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -33,7 +37,7 @@ public class LessonService {
     public void delete(long teacherId, String[] gradesId) throws ServiceException {
         try (LessonDao lessonDao = new LessonDao()){
             for (String gradeId : gradesId) {
-                lessonDao.delete(teacherId, Long.parseLong(gradeId));
+                lessonDao.update(   teacherId, Long.parseLong(gradeId));
             }
         } catch (DaoException e) {
             throw new ServiceException(e);

@@ -223,7 +223,7 @@ body {
 #add_student_block, #add_teacher_block, #delete_parent_block,
 #delete_teacher_block, #delete_student_block, #delete_grade_block,
 #delete_subject_block, #recover_grade_block, #recover_student_block,
-#recover_subject_block, #add_lesson_block {
+#recover_subject_block, #add_lesson_block, #delete_lesson_block, #add_mark_block {
     background: #2b3b4e;
     position: relative;
     -webkit-transform: skewX(-15deg);
@@ -258,7 +258,7 @@ input:valid {
     border-width:2px;
 }
 
-.register, .find_lesson, .add_lesson {
+.register, .find_lesson, .add_lesson, .delete_lesson {
     background-color: #e74c3c;
     color: white;
     padding: 14px 20px;

@@ -12,7 +12,7 @@ import java.util.List;
 public class StudentService {
 
     public void add(String firstName, String lastName, Long gradeId) throws ServiceException {
-        try (StudentDao studentDao = new StudentDao()){
+        try (StudentDao studentDao = new StudentDao()) {
             Grade grade = new Grade(gradeId);
             Student student = new Student(firstName, lastName, grade);
             studentDao.add(student);
@@ -22,7 +22,7 @@ public class StudentService {
     }
 
     public List<Student> findAll(boolean isActive) throws ServiceException {
-        try (StudentDao studentDao = new StudentDao()){
+        try (StudentDao studentDao = new StudentDao()) {
             return studentDao.findAll(isActive);
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -30,7 +30,7 @@ public class StudentService {
     }
 
     public void update(String[] studentsId, boolean isActive) throws ServiceException {
-        try (StudentDao studentDao = new StudentDao()){
+        try (StudentDao studentDao = new StudentDao()) {
             for (String studentId : studentsId) {
                 studentDao.update(Long.parseLong(studentId), isActive);
             }
@@ -40,7 +40,7 @@ public class StudentService {
     }
 
     public List<Student> findByGradeId(long gradeId) throws ServiceException {
-        try (StudentDao studentDao = new StudentDao()){
+        try (StudentDao studentDao = new StudentDao()) {
             List<Student> studentList = studentDao.findByGradeId(gradeId);
             studentList.sort(Comparator.comparing(Student::getLastName).thenComparing(Student::getFirstName));
             return studentList;

@@ -39,7 +39,7 @@ public class TeacherService {
     }
 
     public List<Teacher> findAll() throws ServiceException {
-        try (TeacherDao teacherDao = new TeacherDao()){
+        try (TeacherDao teacherDao = new TeacherDao()) {
             return teacherDao.findAll();
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -48,7 +48,7 @@ public class TeacherService {
 
     public void delete(String[] usersId) throws ServiceException {
         try (UserDao userDao = new UserDao();
-             TeacherDao teacherDao = new TeacherDao()){
+             TeacherDao teacherDao = new TeacherDao()) {
             for (String userId : usersId) {
                 teacherDao.delete(Long.parseLong(userId));
                 userDao.delete(Long.parseLong(userId));
@@ -59,7 +59,7 @@ public class TeacherService {
     }
 
     public boolean hasActiveStudent(long userId) throws ServiceException {
-        try (TeacherDao teacherDao = new TeacherDao()){
+        try (TeacherDao teacherDao = new TeacherDao()) {
             return teacherDao.hasActiveStudent(userId);
         } catch (DaoException e) {
             throw new ServiceException(e);
@@ -67,7 +67,7 @@ public class TeacherService {
     }
 
     public Teacher createTeacher(User user) throws ServiceException {
-        try (TeacherDao teacherDao = new TeacherDao()){
+        try (TeacherDao teacherDao = new TeacherDao()) {
             Teacher teacher = teacherDao.create(user);
             teacher.setEmail(user.getEmail());
             teacher.setLastName(user.getLastName());

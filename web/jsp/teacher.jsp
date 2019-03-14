@@ -118,11 +118,61 @@
             <form class="content" action="${pageContext.request.contextPath}/controller" method="post">
                 <input type="hidden" name="command" value="timetable_add">
                 <input type="hidden" name="lessonId" value="${lessonId}">
+                <input type="hidden" name="gradeId" value="${gradeId}">
+                <input type="hidden" name="subjectId" value="${subjectId}">
                 <div class="container">
                     <label>Выберете дату занятия</label>
                     <input type="date" name="date" required>
                     <button type="submit" class="register"><fmt:message key="add_button" bundle="${i18n}"/></button>
                     <button type="button" onclick="document.getElementById('add_lesson_modal').style.display='none'"
+                            class="cancelbtn"><fmt:message key="cancel_button" bundle="${i18n}"/></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="delete_lesson_modal" class="modal">
+        <span onclick="document.getElementById('delete_lesson_modal').style.display='none'"
+              class="close" title="Close Modal">&times;</span>
+        <div id="delete_lesson_block">
+            <form class="content" action="${pageContext.request.contextPath}/controller" method="post">
+                <input type="hidden" name="command" value="timetable_deletion">
+                <input type="hidden" name="gradeId" value="${gradeId}">
+                <input type="hidden" name="subjectId" value="${subjectId}">
+                <div class="container">
+                    <label>Выберете дату занятия</label>
+                    <input type="date" name="date" required>
+                    <button type="submit" class="register"><fmt:message key="remove_button" bundle="${i18n}"/></button>
+                    <button type="button" onclick="document.getElementById('delete_lesson_modal').style.display='none'"
+                            class="cancelbtn"><fmt:message key="cancel_button" bundle="${i18n}"/></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="add_mark_modal" class="modal">
+        <span onclick="document.getElementById('add_mark_modal').style.display='none'"
+              class="close" title="Close Modal">&times;</span>
+        <div id="add_mark_block">
+            <form name="mark_form" class="content" action="${pageContext.request.contextPath}/controller" method="post">
+                <input type="hidden" name="command" value="mark_add">
+                <input type="hidden" name="studentId">
+                <input type="hidden" name="dateId">
+                <div class="container">
+                    <label>Выберете оценку</label>
+                    <select class="select2" name="mark" required style="width: 50px;">
+                        <option value="-1">н</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <button type="submit" class="register"><fmt:message key="add_button" bundle="${i18n}"/></button>
+                    <button type="button" onclick="document.getElementById('add_mark_modal').style.display='none'"
                             class="cancelbtn"><fmt:message key="cancel_button" bundle="${i18n}"/></button>
                 </div>
             </form>
@@ -134,24 +184,49 @@
             <input class="delete_lesson" type="button" value="Delete lesson" onclick="document.getElementById('delete_lesson_modal').style.display='block'">
             <input class="find_lesson" type="button" value="Find Lesson" onclick="document.getElementById('find_lesson_modal').style.display='block'">
             <br>
-            <table>
-                <c:forEach var="student" items="${studentList}">
-                    <tr><td>${student}</td></tr>
+            <table id="student_table">
+                <c:forEach var="student" items="${studentList}" varStatus="loop">
+                    <tr><td>${loop.index+1} ${student}</td></tr>
                 </c:forEach>
-            </table><c:if test="${fn:length(dateList) gt 0}"><table>
+                <tr class="spacer"></tr>
+                <tr><td>Домашнее задание</td></tr>
+                <tr class="spacer"></tr>
+            </table><table>
+                <tr id="data_row">
+                    <c:forEach var="date" items="${dateList}">
+                        <td><p style="writing-mode:vertical-rl">${date}</p></td>
+                    </c:forEach>
+                </tr>
+                <c:forEach var="list" items="${studentsMarks}" varStatus="loop1">
                     <tr>
-                        <c:forEach var="date" items="${dateList}">
-                            <td><p style="writing-mode:vertical-rl">${date}</p></td>
+                        <c:forEach var="mark" items="${list}" varStatus="loop2">
+                            <td class="mark">
+                                <a onclick="document.getElementById('add_mark_modal').style.display='block';
+                                            document.mark_form.studentId.value = '${studentList[loop1.index].studentId}';
+                                            document.mark_form.dateId.value = '${dateList[loop2.index].dateId}';">
+                                    <div class="mark_div">${mark}</div>
+                                </a>
+                            </td>
                         </c:forEach>
                     </tr>
-                <c:forEach var="list" items="${studentsMarks}">
-                    <tr>
-                        <c:forEach var="mark" items="${list}">
-                            <td class="mark"><a href="#"><div class="mark_div">${mark}</div></a></td>
-                        </c:forEach>
-                    </tr>
                 </c:forEach>
-            </table></c:if>
+                <tr class="spacer"></tr>
+                <tr>
+                    <c:forEach var="homework" items="${homeworkList}">
+                        <td class="homework">
+                            <a onclick="">
+                                <div class="homework_div">${homework}</div>
+                            </a>
+                        </td>
+                    </c:forEach>
+                </tr>
+                <tr class="spacer"></tr>
+            </table>
+        </div>
+    </div>
+    <div id="modal">
+        <div id="modal-content">
+            <p id="message-text"></p>
         </div>
     </div>
     <c:if test="${sessionScope.message != null}">
@@ -159,13 +234,26 @@
             <c:when test="${sessionScope.message=='show_add_grade_block'}">
                 <script>document.getElementById('add_grade_block').style.display = 'block';</script>
             </c:when>
-            <c:otherwise>
-                <div id="modal">
-                    <div id="modal-content">
-                        <p><fmt:message key="${sessionScope.message}" bundle="${i18n}"/></p>
-                    </div>
-                </div>
+            <c:when test="${sessionScope.message=='show_journal_block'}">
+                <script>document.getElementById('journal_block').style.display = 'block';</script>
+            </c:when>
+            <c:when test="${sessionScope.message=='find_journal'}">
+                <script>document.getElementById('find_journal${gradeId}${subjectId}').submit();</script>
+            </c:when>
+            <c:when test="${sessionScope.message=='incorrect_date'}">
                 <script>
+                    document.getElementById('message-text').innerText = '<fmt:message key="${sessionScope.message}" bundle="${i18n}"/>';
+                    document.getElementById('modal').style.display = 'block';
+                    setTimeout(function(){
+                        document.getElementById('find_journal${gradeId}${subjectId}').submit();
+                        document.getElementById('modal').style.display = 'none';
+                    }, 2000);
+                </script>
+            </c:when>
+            <c:otherwise>
+                <script>
+                    document.getElementById('message-text').innerText = '<fmt:message key="${sessionScope.message}" bundle="${i18n}"/>';
+                    document.getElementById('modal').style.display = 'block';
                     setTimeout(function(){
                         document.getElementById('modal').style.display = 'none';
                     }, 2000);
