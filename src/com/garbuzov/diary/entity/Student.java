@@ -61,6 +61,7 @@ public class Student extends Entity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         Student student = (Student) o;
 
@@ -72,7 +73,8 @@ public class Student extends Entity {
 
     @Override
     public int hashCode() {
-        int result = (int) (studentId ^ (studentId >>> 32));
+        int result = super.hashCode();
+        result = 31 * result + (int) (studentId ^ (studentId >>> 32));
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (grade != null ? grade.hashCode() : 0);

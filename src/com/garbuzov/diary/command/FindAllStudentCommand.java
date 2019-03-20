@@ -3,6 +3,9 @@ package com.garbuzov.diary.command;
 import com.garbuzov.diary.entity.Student;
 import com.garbuzov.diary.exception.ServiceException;
 import com.garbuzov.diary.service.StudentService;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Comparator;
 import java.util.List;
@@ -19,6 +22,9 @@ public class FindAllStudentCommand implements Command {
     private final static String FOR_REMOVING = "for_removing";
     private final static String FOR_RECOVERY = "for_recovery";
     private final static String STUDENT_LIST = "studentList";
+    private final static String ERROR_PAGE_PATH = "jsp/error.jsp";
+    private final static String ERROR = "error";
+    private static Logger logger = LogManager.getLogger();
 
     @Override
     public Transition execute(HttpServletRequest request) {
@@ -39,8 +45,9 @@ public class FindAllStudentCommand implements Command {
             studentList.sort(Comparator.comparing(Student::getLastName).thenComparing(Student::getFirstName));
             request.getSession().setAttribute(STUDENT_LIST, studentList);
         } catch (ServiceException e) {
-            //log
-            //transition to error page
+            logger.log(Level.ERROR, e);
+            request.getSession().setAttribute(ERROR, e);
+            transition.setPage(ERROR_PAGE_PATH);
         }
         return transition;
     }

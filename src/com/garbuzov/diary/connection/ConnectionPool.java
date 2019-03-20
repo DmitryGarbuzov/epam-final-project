@@ -2,14 +2,17 @@ package com.garbuzov.diary.connection;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Enumeration;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ConnectionPool {
+
     private BlockingQueue<ProxyConnection> connections;
     private final String CONNECTION_PROPERTIES = "connection.properties";
     private final String POOL_SIZE = "db.poolSize";
@@ -28,7 +31,8 @@ public class ConnectionPool {
             properties.load(classLoader.getResourceAsStream(CONNECTION_PROPERTIES));
             init(properties);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.ERROR, e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -45,11 +49,12 @@ public class ConnectionPool {
                     temp.setAutoCommit(false);
                     connections.put(temp);
                 } catch (InterruptedException e) {
-                    //
+                    logger.log(Level.ERROR,  Thread.currentThread().getName() + " was interrupted", e);
+                    Thread.currentThread().interrupt();
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.ERROR, e);
         }
     }
 
@@ -70,7 +75,7 @@ public class ConnectionPool {
         try {
             connection = connections.take();
         } catch (InterruptedException e) {
-            //log
+            logger.log(Level.ERROR,  Thread.currentThread().getName() + " was interrupted", e);
             Thread.currentThread().interrupt();
         }
         return connection;
@@ -79,8 +84,8 @@ public class ConnectionPool {
     public void releaseConnection(ProxyConnection connection) {
         try {
             connections.put(connection);
-        } catch (InterruptedException e) {//todo
-            //log
+        } catch (InterruptedException e) {
+            logger.log(Level.ERROR,  Thread.currentThread().getName() + " was interrupted", e);
             Thread.currentThread().interrupt();
         }
     }
@@ -91,9 +96,18 @@ public class ConnectionPool {
             try {
                 ProxyConnection temp = connections.take();
                 temp.closeConnection();
-                //Deregister driver
+                Enumeration<Driver> drivers = DriverManager.getDrivers();
+                while (drivers.hasMoreElements()) {
+                    Driver driver = drivers.nextElement();
+                    try {
+                        DriverManager.deregisterDriver(driver);
+                    } catch (SQLException e) {
+                        logger.log(Level.ERROR, String.format("Error deregistering driver %s", driver), e);
+                    }
+                }
             } catch (InterruptedException | SQLException e) {
-                //
+                logger.log(Level.ERROR,  Thread.currentThread().getName() + " was interrupted", e);
+                Thread.currentThread().interrupt();
             }
         }
     }

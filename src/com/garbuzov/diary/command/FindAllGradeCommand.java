@@ -3,11 +3,15 @@ package com.garbuzov.diary.command;
 import com.garbuzov.diary.entity.Grade;
 import com.garbuzov.diary.exception.ServiceException;
 import com.garbuzov.diary.service.GradeService;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Comparator;
 import java.util.List;
 
 public class FindAllGradeCommand implements Command {
+
     private static GradeService gradeService = new GradeService();
     private final static String ADMIN_PAGE_PATH = "jsp/admin.jsp";
     private final static String TARGET = "target";
@@ -18,6 +22,9 @@ public class FindAllGradeCommand implements Command {
     private final static String FOR_REMOVING = "for_removing";
     private final static String FOR_RECOVERY = "for_recovery";
     private final static String GRADE_LIST = "gradeList";
+    private final static String ERROR_PAGE_PATH = "jsp/error.jsp";
+    private final static String ERROR = "error";
+    private static Logger logger = LogManager.getLogger();
 
     @Override
     public Transition execute(HttpServletRequest request) {
@@ -38,8 +45,9 @@ public class FindAllGradeCommand implements Command {
             gradeList.sort(Comparator.comparing(Grade::getNumber).thenComparing(Grade::getLetter));
             request.getSession().setAttribute(GRADE_LIST, gradeList);
         } catch (ServiceException e) {
-            //log
-            //transition to error page
+            logger.log(Level.ERROR, e);
+            request.getSession().setAttribute(ERROR, e);
+            transition.setPage(ERROR_PAGE_PATH);
         }
         return transition;
     }

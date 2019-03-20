@@ -13,12 +13,13 @@ import java.io.IOException;
 public class UserFilter extends HttpFilter {
 
     private final static String ROLE = "role";
+    private final static String ERROR_PAGE_URI = "/jsp/error.jsp";
 
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         String requestURI = request.getRequestURI();
         UserType userType = (UserType) request.getSession().getAttribute(ROLE);
-        if (requestURI != null && !requestURI.equals(userType.getUserURI())) {
+        if (requestURI != null && !requestURI.equals(userType.getUserURI()) && !requestURI.equals(ERROR_PAGE_URI)) {
             request.getRequestDispatcher(userType.getPagePath()).forward(request, response);
         }
         chain.doFilter(request, response);

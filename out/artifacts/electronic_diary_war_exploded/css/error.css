@@ -1,0 +1,40 @@
+.page__cell {
+    background: rgba(114, 18, 19, 1.0);
+    background: -webkit-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: -moz-linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    background: linear-gradient(top left, rgba(114, 18, 19, 1.0), rgba(1, 1, 1, 1.0));
+    min-height: calc(100% - 100px);
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+#error_block {
+    background: #2b3b4e;
+    position: relative;
+    -webkit-transform: skewX(-7deg);
+    margin: auto;
+    width: 80%;
+    list-style:none;
+    align-content: center;
+}
+
+#error_block .content {
+    margin-top: 0;
+    padding: 60px 0 60px 0;
+    width: 75%;
+    -webkit-transform: skewX(7deg);
+}
+
+table {
+    width: 100%;
+    color: #cccccc;
+}
+
+.backbtn {
+    margin-left: 50px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    margin-bottom: 50px;
+    cursor: pointer;
+}

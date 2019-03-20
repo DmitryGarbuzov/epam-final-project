@@ -32,6 +32,15 @@ public class CommandMap {
         enumMap.put(CommandType.TIMETABLE_ADD, new TimetableAddCommand());
         enumMap.put(CommandType.TIMETABLE_DELETION, new TimetableDeletionCommand());
         enumMap.put(CommandType.MARK_ADD, new MarkAddCommand());
+        enumMap.put(CommandType.HOMEWORK_ADD, new HomeworkAddCommand());
+        enumMap.put(CommandType.BACK_JOURNAL, new BackJournalCommand());
+        enumMap.put(CommandType.FORWARD_JOURNAL, new ForwardJournalCommand());
+        enumMap.put(CommandType.FIND_DIARY, new FindDiaryCommand());
+        enumMap.put(CommandType.BACK_DIARY, new BackDiaryCommand());
+        enumMap.put(CommandType.FORWARD_DIARY, new ForwardDiaryCommand());
+        enumMap.put(CommandType.FIND_HOMEWORK, new FindHomeworkCommand());
+        enumMap.put(CommandType.BACK_HOMEWORK, new BackHomeworkCommand());
+        enumMap.put(CommandType.FORWARD_HOMEWORK, new ForwardHomeworkCommand());
     }
 
     private CommandMap() {}

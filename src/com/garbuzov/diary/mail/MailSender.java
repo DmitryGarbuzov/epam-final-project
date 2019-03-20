@@ -1,5 +1,6 @@
 package com.garbuzov.diary.mail;
 
+import com.garbuzov.diary.exception.MailException;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -10,7 +11,6 @@ public class MailSender {
 
     private static MailSender instance;
     private static Properties properties = new Properties();
-    private static Session session;
     private final static String SMTP_PROPERTIES = "smtp.properties";
     private final static String USERNAME = "nivelada360@gmail.com";
     private final static String PASSWORD = "247l734F001";
@@ -19,19 +19,7 @@ public class MailSender {
     private final static String MESSAGE_PART_2 = "\nC уважением, команда Doskort.";
     private final static String SPACE = " ";
 
-    private MailSender() {
-        try {
-            ClassLoader classLoader = getClass().getClassLoader();
-            properties.load(classLoader.getResourceAsStream(SMTP_PROPERTIES));
-            session = Session.getInstance(properties, new Authenticator() {
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(USERNAME, PASSWORD);
-                }
-            });
-        } catch (IOException e) {
-
-        }
-    }
+    private MailSender() {}
 
     public static MailSender getInstance() {
         if (instance == null) {
@@ -40,18 +28,25 @@ public class MailSender {
         return instance;
     }
 
-    public void send(String toEmail, String firstName, String lastName, String password){
+    public void send(String toEmail, String firstName, String lastName, String password) throws MailException {
         toEmail = "garbuzov1999@inbox.ru";
         String text = lastName + SPACE + firstName + MESSAGE_PART_1 + password + MESSAGE_PART_2;
         try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            properties.load(classLoader.getResourceAsStream(SMTP_PROPERTIES));
+            Session session = Session.getInstance(properties, new Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(USERNAME, PASSWORD);
+                }
+            });
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(USERNAME));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
             message.setSubject(TITLE);
             message.setText(text);
             Transport.send(message);
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
+        } catch (MessagingException | IOException e) {
+            throw new MailException(e);
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.garbuzov.diary.entity;
 
 public class Grade extends Entity {
+
     private long gradeId;
     private int number;
     private String letter;
@@ -50,15 +51,18 @@ public class Grade extends Entity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         Grade grade = (Grade) o;
+
         return letter != null ? letter.equals(grade.letter) : grade.letter == null &&
-               number == grade.number && gradeId == grade.gradeId ;
+               number == grade.number && gradeId == grade.gradeId;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (gradeId ^ (gradeId >>> 32));
+        int result = super.hashCode();
+        result = 31 * result + (int) (gradeId ^ (gradeId >>> 32));
         result = 31 * result + number;
         result = 31 * result + (letter != null ? letter.hashCode() : 0);
         return result;

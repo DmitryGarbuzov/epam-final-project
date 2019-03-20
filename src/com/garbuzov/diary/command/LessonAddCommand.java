@@ -4,7 +4,9 @@ import com.garbuzov.diary.entity.Grade;
 import com.garbuzov.diary.entity.Subject;
 import com.garbuzov.diary.exception.ServiceException;
 import com.garbuzov.diary.service.LessonService;
-import com.garbuzov.diary.service.StudentService;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Map;
@@ -12,27 +14,33 @@ import java.util.Map;
 public class LessonAddCommand implements Command {
 
     private static LessonService lessonService = new LessonService();
-    private final static String FIRST_NAME = "first_name";
-    private final static String LAST_NAME = "last_name";
-    private final static String GRADE = "grade";
     private final static String TEACHER_PAGE_PATH = "jsp/teacher.jsp";
-    private final static String MESSAGE = "Класс успешно добавлен";
+    private final static String MESSAGE = "grade_success_added";
+    private final static String TEACHER_ID = "teacherId";
+    private final static String GRADE = "grade";
+    private final static String SUBJECTS = "subjects[]";
+    private final static String GRADES = "grades";
+    private final static String ERROR_PAGE_PATH = "jsp/error.jsp";
+    private final static String ERROR = "error";
+    private static Logger logger = LogManager.getLogger();
 
     @Override
     public Transition execute(HttpServletRequest request) {
         Transition transition = new Transition();
         transition.setRedirectType();
         transition.setPage(TEACHER_PAGE_PATH);
-        long teacherId = Long.parseLong(request.getParameter("teacherId"));
-        long gradeId = Long.parseLong(request.getParameter("grade"));
-        String[] subjectsId = request.getParameterValues("subjects[]");
+        long teacherId = Long.parseLong(request.getParameter(TEACHER_ID));
+        long gradeId = Long.parseLong(request.getParameter(GRADE));
+        String[] subjectsId = request.getParameterValues(SUBJECTS);
         try {
             lessonService.add(teacherId, gradeId, subjectsId);
             Map<Grade, ArrayList<Subject>> gradeMap = lessonService.findAllGrades(teacherId);
-            request.getSession().setAttribute("grades", gradeMap);
+            request.getSession().setAttribute(GRADES, gradeMap);
             transition.setMessage(MESSAGE);
         } catch (ServiceException e) {
-
+            logger.log(Level.ERROR, e);
+            request.getSession().setAttribute(ERROR, e);
+            transition.setPage(ERROR_PAGE_PATH);
         }
         return transition;
     }

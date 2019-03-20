@@ -14,6 +14,9 @@
     <link href="../css/owl.carousel.min.css" rel="stylesheet" type="text/css">
     <link href="../css/doskort.css" rel="stylesheet" type="text/css">
     <link href="../css/teacher.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="../script/teacher.js"></script>
 </head>
 <body>
 <fmt:setLocale value="${sessionScope.language}"/>
@@ -46,7 +49,7 @@
                 <ul class="submenu">
                     <c:forEach var="subject" items="${entry.value}">
                         <li>
-                            <a href="#" onclick="document.getElementById('find_journal${entry.key.gradeId}${subject.subjectId}').submit();">${subject}</a>
+                            <a href="#" onclick="document.getElementById('find_journal${entry.key.gradeId}${subject.subjectId}').submit(); return false;">${subject}</a>
                             <form id="find_journal${entry.key.gradeId}${subject.subjectId}" action="${pageContext.request.contextPath}/controller" method="post">
                                 <input type="hidden" name="teacherId" value="${user.teacherId}">
                                 <input type="hidden" name="gradeId" value="${entry.key.gradeId}">
@@ -59,11 +62,11 @@
             </li>
         </c:forEach>
         <li>
-            <a href="#">Класс</a>
+            <a href="#"><fmt:message key="grade_button" bundle="${i18n}"/></a>
             <ul class="submenu">
                 <li>
                     <a href="#"
-                       onclick="document.getElementById('find_all_grade').submit(); return false"><fmt:message key="adding_button" bundle="${i18n}"/></a>
+                       onclick="document.getElementById('find_all_grade').submit(); return false;"><fmt:message key="adding_button" bundle="${i18n}"/></a>
                     <form id="find_all_grade" action="${pageContext.request.contextPath}/controller" method="post">
                         <input type="hidden" name="teacherId" value="${user.teacherId}">
                         <input type="hidden" name="command" value="grade_for_teacher">
@@ -121,7 +124,7 @@
                 <input type="hidden" name="gradeId" value="${gradeId}">
                 <input type="hidden" name="subjectId" value="${subjectId}">
                 <div class="container">
-                    <label>Выберете дату занятия</label>
+                    <label><fmt:message key='date_selection' bundle='${i18n}'/></label>
                     <input type="date" name="date" required>
                     <button type="submit" class="register"><fmt:message key="add_button" bundle="${i18n}"/></button>
                     <button type="button" onclick="document.getElementById('add_lesson_modal').style.display='none'"
@@ -139,7 +142,7 @@
                 <input type="hidden" name="gradeId" value="${gradeId}">
                 <input type="hidden" name="subjectId" value="${subjectId}">
                 <div class="container">
-                    <label>Выберете дату занятия</label>
+                    <label><fmt:message key='date_selection' bundle='${i18n}'/></label>
                     <input type="date" name="date" required>
                     <button type="submit" class="register"><fmt:message key="remove_button" bundle="${i18n}"/></button>
                     <button type="button" onclick="document.getElementById('delete_lesson_modal').style.display='none'"
@@ -157,7 +160,7 @@
                 <input type="hidden" name="studentId">
                 <input type="hidden" name="dateId">
                 <div class="container">
-                    <label>Выберете оценку</label>
+                    <label><fmt:message key='mark_selection' bundle='${i18n}'/></label>
                     <select class="select2" name="mark" required style="width: 50px;">
                         <option value="-1">н</option>
                         <option value="1">1</option>
@@ -171,8 +174,27 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                     </select>
-                    <button type="submit" class="register"><fmt:message key="add_button" bundle="${i18n}"/></button>
+                    <button type="submit" class="register">OK</button>
                     <button type="button" onclick="document.getElementById('add_mark_modal').style.display='none'"
+                            class="cancelbtn"><fmt:message key="cancel_button" bundle="${i18n}"/></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="add_homework_modal" class="modal">
+        <span onclick="document.getElementById('add_homework_modal').style.display='none'"
+              class="close" title="Close Modal">&times;</span>
+        <div id="add_homework_block">
+            <form name="homework_form" class="content" action="${pageContext.request.contextPath}/controller" method="post">
+                <input type="hidden" name="command" value="homework_add">
+                <input type="hidden" name="dateId">
+                <div class="container">
+                    <label><fmt:message key='homework' bundle='${i18n}'/></label>
+                    <textarea id="text_for_work" readonly></textarea>
+                    <label><fmt:message key='new_homework' bundle='${i18n}'/></label>
+                    <textarea name="homework" maxlength="199" required></textarea>
+                    <button type="submit" class="register">OK</button>
+                    <button type="button" onclick="document.getElementById('add_homework_modal').style.display='none'"
                             class="cancelbtn"><fmt:message key="cancel_button" bundle="${i18n}"/></button>
                 </div>
             </form>
@@ -180,16 +202,36 @@
     </div>
     <div id="journal_block">
         <div class="content">
-            <input class="add_lesson" type="button" value="Add lesson" onclick="document.getElementById('add_lesson_modal').style.display='block'">
-            <input class="delete_lesson" type="button" value="Delete lesson" onclick="document.getElementById('delete_lesson_modal').style.display='block'">
-            <input class="find_lesson" type="button" value="Find Lesson" onclick="document.getElementById('find_lesson_modal').style.display='block'">
+            <input class="add_lesson" type="button" value="<fmt:message key='add_lesson_button' bundle='${i18n}'/>"
+                   onclick="document.getElementById('add_lesson_modal').style.display='block'">
+            <input class="delete_lesson" type="button" value="<fmt:message key='delete_lesson_button' bundle='${i18n}'/>"
+                   onclick="document.getElementById('delete_lesson_modal').style.display='block'">
             <br>
             <table id="student_table">
+                <tr id="button_row"><td>
+                    <div class="center">
+                        <c:if test="${fn:length(dateList)==13 || lastCommand=='forward'}">
+                            <form id="backbtn" action="${pageContext.request.contextPath}/controller" method="post">
+                                <input type="hidden" name="command" value="back_journal">
+                                <input type="hidden" name="date" value="${dateList[0].dateId}">
+                                <input type="submit" value="❮">
+                            </form>
+                        </c:if>
+                        <input id="currentbtn" type="button" onclick="document.getElementById('find_journal${gradeId}${subjectId}').submit();" value="•">
+                        <c:if test="${fn:length(dateList)==13 || lastCommand=='back'}">
+                            <form id="forwardbtn" action="${pageContext.request.contextPath}/controller" method="post">
+                                <input type="hidden" name="command" value="forward_journal">
+                                <input type="hidden" name="date" value="${dateList[fn:length(dateList) - 1].dateId}">
+                                <input type="submit" value="❯">
+                            </form>
+                        </c:if>
+                    </div>
+                </td></tr>
                 <c:forEach var="student" items="${studentList}" varStatus="loop">
                     <tr><td>${loop.index+1} ${student}</td></tr>
                 </c:forEach>
                 <tr class="spacer"></tr>
-                <tr><td>Домашнее задание</td></tr>
+                <tr><td><fmt:message key='homework' bundle='${i18n}'/></td></tr>
                 <tr class="spacer"></tr>
             </table><table>
                 <tr id="data_row">
@@ -212,9 +254,11 @@
                 </c:forEach>
                 <tr class="spacer"></tr>
                 <tr>
-                    <c:forEach var="homework" items="${homeworkList}">
+                    <c:forEach var="homework" items="${homeworkList}" varStatus="loop">
                         <td class="homework">
-                            <a onclick="">
+                            <a onclick="document.getElementById('add_homework_modal').style.display='block';
+                                        document.homework_form.dateId.value='${dateList[loop.index].dateId}';
+                                        document.getElementById('text_for_work').value='${homework}';">
                                 <div class="homework_div">${homework}</div>
                             </a>
                         </td>
@@ -231,16 +275,25 @@
     </div>
     <c:if test="${sessionScope.message != null}">
         <c:choose>
+            <c:when test="${sessionScope.message=='has_no_active_subject'}">
+                <script>
+                    document.getElementById('message-text').innerText = '<fmt:message key="${sessionScope.message}" bundle="${i18n}"/>';
+                    document.getElementById('modal').style.display = 'block';
+                </script>
+            </c:when>
             <c:when test="${sessionScope.message=='show_add_grade_block'}">
                 <script>document.getElementById('add_grade_block').style.display = 'block';</script>
             </c:when>
             <c:when test="${sessionScope.message=='show_journal_block'}">
-                <script>document.getElementById('journal_block').style.display = 'block';</script>
+                <script>
+                    document.getElementById('journal_block').style.display = 'block';
+                    scroll();
+                </script>
             </c:when>
             <c:when test="${sessionScope.message=='find_journal'}">
                 <script>document.getElementById('find_journal${gradeId}${subjectId}').submit();</script>
             </c:when>
-            <c:when test="${sessionScope.message=='incorrect_date'}">
+            <c:when test="${sessionScope.message=='incorrect_add_date' || sessionScope.message=='incorrect_delete_date'}">
                 <script>
                     document.getElementById('message-text').innerText = '<fmt:message key="${sessionScope.message}" bundle="${i18n}"/>';
                     document.getElementById('modal').style.display = 'block';
@@ -264,8 +317,5 @@
     </c:if>
 </div>
 <doskort:footer/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<script src="../script/teacher.js"></script>
 </body>
 </html>

@@ -63,7 +63,7 @@
             <c:remove var="message" scope="session"/>
           </c:if>
           <label><b>Email</b></label>
-          <input type="text" name="email" class="email" pattern="[a-z0-9._]{2,20}@[a-z0-9.-]{1,10}\.[a-z]{2,5}"
+          <input type="text" name="email" class="email" pattern="[a-z0-9._]{2,20}@[a-z0-9._]{1,10}\.[a-z]{2,5}"
                  title="Данные в формате email" required >
           <label><b><fmt:message key="password" bundle="${i18n}"/></b></label>
           <input type="password" name="password" pattern="[\w]{8,19}"

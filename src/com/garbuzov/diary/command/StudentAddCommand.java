@@ -2,6 +2,9 @@ package com.garbuzov.diary.command;
 
 import com.garbuzov.diary.exception.ServiceException;
 import com.garbuzov.diary.service.*;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 public class StudentAddCommand implements Command {
@@ -12,6 +15,9 @@ public class StudentAddCommand implements Command {
     private final static String GRADE = "grade";
     private final static String ADMIN_PAGE_PATH = "jsp/admin.jsp";
     private final static String MESSAGE = "student_add";
+    private final static String ERROR_PAGE_PATH = "jsp/error.jsp";
+    private final static String ERROR = "error";
+    private static Logger logger = LogManager.getLogger();
 
     @Override
     public Transition execute(HttpServletRequest request) {
@@ -25,7 +31,9 @@ public class StudentAddCommand implements Command {
             studentService.add(firstName, lastName, gradeId);
             transition.setMessage(MESSAGE);
         } catch (ServiceException e) {
-
+            logger.log(Level.ERROR, e);
+            request.getSession().setAttribute(ERROR, e);
+            transition.setPage(ERROR_PAGE_PATH);
         }
         return transition;
     }

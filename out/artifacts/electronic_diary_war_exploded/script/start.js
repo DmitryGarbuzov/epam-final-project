@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
       items: 1,
@@ -16,6 +17,7 @@ window.onclick = function(event) {
     if (event.target === modal) {
         modal.style.display = "none";
         document.getElementsByClassName("email").item(0).value = "";
+        document.getElementsByClassName("message").item(0).innerHTML = "";
     }
 };
 

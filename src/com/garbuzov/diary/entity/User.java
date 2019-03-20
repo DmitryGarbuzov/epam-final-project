@@ -43,19 +43,21 @@ public class User extends Entity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         User user = (User) o;
 
-        return email.equals(user.email) &&
-               firstName.equals(user.firstName) &&
-               lastName.equals(user.lastName);
+        return lastName != null ? lastName.equals(user.lastName) : user.lastName == null &&
+               email != null ? email.equals(user.email) : user.email == null &&
+               firstName != null ? firstName.equals(user.firstName) : user.firstName == null;
     }
 
     @Override
     public int hashCode() {
-        int result = email.hashCode();
-        result = 31 * result + firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         return result;
     }
 

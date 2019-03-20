@@ -7,47 +7,215 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24db3e91-9d97-4139-b21a-31c9dac23298" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c9562922-8bf0-461b-b698-2ed8a72c0c19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c9562922-8bf0-461b-b698-2ed8a72c0c19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/HomeworkDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/TimetableDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/CommandMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/CommandMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/CommandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/CommandType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllGradeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllGradeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllParentCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllParentCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllStudentCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllStudentCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllSubjectCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllSubjectCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllTeacherCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindAllTeacherCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindJournalCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/FindJournalCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeForTeacherCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeForTeacherCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/GradeUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/LessonAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/LessonAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/LessonDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/LessonDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/MarkAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/MarkAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/ParentDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/ParentDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/ParentRegistrationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/ParentRegistrationCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SignUpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SignUpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/StudentAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/StudentAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/StudentUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/StudentUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SubjectAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SubjectAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SubjectUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/SubjectUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TeacherDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TeacherDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TeacherRegistrationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TeacherRegistrationCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TimetableAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TimetableAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TimetableDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/command/TimetableDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/connection/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/connection/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/connection/ProxyConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/connection/ProxyConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/BaseDao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/GradeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/HomeworkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/HomeworkDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/LessonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/LessonDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/MainRoleDao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/MarkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/MarkDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/MinorRoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/ParentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/ParentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/SubjectDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/TeacherDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/TimetableDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/TimetableDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Grade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/LessonDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/LessonDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Subject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/filter/UserFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/filter/UserFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/mail/MailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/mail/MailSender$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/mail/MailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/mail/MailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/GradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/GradeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/HomeworkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/HomeworkService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/LessonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/LessonService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/MarkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/MarkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/ParentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/SubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/SubjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/TeacherService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/TimetableService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/TimetableService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/servlet/MainServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/servlet/MainServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/servlet/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/com/garbuzov/diary/servlet/MainServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/i18n/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/i18n/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/i18n/messages_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/doskort.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/doskort.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/parent.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/parent.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/teacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/css/teacher.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/parent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/parent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/start.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/start.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/teacher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/jsp/teacher.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/parent.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/parent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/electronic_diary_war_exploded/script/teacher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/CommandMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/CommandMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/CommandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/CommandType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllGradeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllGradeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllParentCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllParentCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllStudentCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllStudentCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllSubjectCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllSubjectCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllTeacherCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindAllTeacherCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindJournalCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/FindJournalCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeForTeacherCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeForTeacherCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/GradeUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/LessonAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/LessonAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/LessonDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/LessonDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/MarkAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/MarkAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/ParentDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/ParentDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/ParentRegistrationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/ParentRegistrationCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SignUpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SignUpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/StudentAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/StudentAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/StudentUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/StudentUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SubjectAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SubjectAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SubjectUpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/SubjectUpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TeacherDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TeacherDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TeacherRegistrationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TeacherRegistrationCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TimetableAddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TimetableAddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TimetableDeletionCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/command/TimetableDeletionCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/connection/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/connection/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/connection/ProxyConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/connection/ProxyConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/BaseDao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/GradeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/HomeworkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/HomeworkDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/LessonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/LessonDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/MainRoleDao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/MarkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/MarkDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/MinorRoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/ParentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/ParentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/SubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/SubjectDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/TeacherDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/TimetableDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/TimetableDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Grade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/LessonDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/LessonDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Subject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/filter/UserFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/filter/UserFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/mail/MailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/mail/MailSender$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/mail/MailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/mail/MailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/GradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/GradeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/HomeworkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/HomeworkService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/LessonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/LessonService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/MarkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/MarkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/ParentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/SubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/SubjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/TeacherService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/TimetableService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/TimetableService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/servlet/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/servlet/MainServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/servlet/MainServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/servlet/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/com/garbuzov/diary/servlet/MainServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/i18n/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/i18n/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/i18n/messages_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/electronic diary/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/electronic diary/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/i18n/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/i18n/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/i18n/messages_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllGradeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllGradeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllParentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllParentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllStudentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllStudentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllSubjectCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllSubjectCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllTeacherCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllTeacherCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindJournalCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindJournalCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeForTeacherCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeForTeacherCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonAddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/MarkAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/MarkAddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentDeletionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentDeletionCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentRegistrationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentRegistrationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentAddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectAddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectUpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectUpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherDeletionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherDeletionCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherRegistrationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherRegistrationCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableAddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableAddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/GradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/GradeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/LessonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/LessonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableDeletionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableDeletionCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/connection/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/connection/ProxyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/connection/ProxyConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/AdminDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/BaseDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/GradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/GradeDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/HomeworkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/LessonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/LessonDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MainRoleDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/MarkDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MinorRoleDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/ParentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/ParentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/StudentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/SubjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/SubjectDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TeacherDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/TeacherDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Grade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/filter/UserFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/filter/UserFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/mail/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/mail/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/GradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/HomeworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/HomeworkService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/LessonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/LessonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/MarkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/MarkService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/ParentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/ParentService.java" afterDir="false" />
@@ -55,9 +223,17 @@
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/SubjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/TeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/TimetableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/TimetableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/doskort.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/doskort.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/parent.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/parent.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/teacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/teacher.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/parent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/parent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/start.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/start.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/teacher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/teacher.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/script/parent.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/script/parent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/script/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/script/start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/script/teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/script/teacher.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -94,130 +270,59 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="diary: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="diary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="diary: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="mark: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/jsp/teacher.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="231" column="23" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="23" />
+            <state relative-caret-position="1309">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java">
+        <entry file="file://$PROJECT_DIR$/web/jsp/start.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#351#352#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1207">
+              <caret line="71" column="77" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java">
+        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllGradeCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="680">
+              <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/HomeworkDao.java">
+        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/MarkService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="544">
+              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/css/teacher.css">
+        <entry file="file://$PROJECT_DIR$/resources/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="3" column="107" selection-start-line="3" selection-start-column="107" selection-end-line="3" selection-end-column="107" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="20" column="129" selection-start-line="20" selection-start-column="129" selection-end-line="20" selection-end-column="129" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindJournalCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="41" column="70" lean-forward="true" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/HomeworkService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/script/teacher.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/web/jsp/parent.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -226,10 +331,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="jsf" />
-        <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -247,6 +352,10 @@
       <find>add_le</find>
       <find>delete_lesson</find>
       <find>sign</find>
+      <find>add_hom</find>
+      <find>add_home</find>
+      <find>add_homework_modal</find>
+      <find>add_homework_block</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,57 +364,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MainRoleDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/ParentDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Teacher.java" />
-        <option value="$PROJECT_DIR$/web/css/admin.css" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/GradeService.java" />
-        <option value="$PROJECT_DIR$/web/jsp/start.jsp" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeForTeacherCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Grade.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonAddCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/filter/UserFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeleteionCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindMagazineCommand.java" />
-        <option value="$PROJECT_DIR$/web/css/start.css" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/StudentDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Student.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TeacherDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Date.java" />
-        <option value="$PROJECT_DIR$/web/jsp/admin.jsp" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/mail/MailSender.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/GradeDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/LessonDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/LessonService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableAddCommand.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherDeletionCommand.java" />
+        <option value="$PROJECT_DIR$/web/css/error.css" />
+        <option value="$PROJECT_DIR$/web/jsp/error.jsp" />
         <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableDeletionCommand.java" />
-        <option value="$PROJECT_DIR$/web/css/doskort.css" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandType.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandMap.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/MarkAddCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherRegistrationCommand.java" />
         <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectUpdateCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectAddCommand.java" />
         <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentUpdateCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/TimetableService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/SubjectService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/TeacherService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/ParentService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Homework.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/dao/HomeworkDao.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/HomeworkService.java" />
-        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/service/MarkService.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentRegistrationCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentDeletionCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/MarkAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/HomeworkAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeForTeacherCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardJournalCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardHomeworkCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardDiaryCommand.java" />
         <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindJournalCommand.java" />
-        <option value="$PROJECT_DIR$/web/script/teacher.js" />
-        <option value="$PROJECT_DIR$/web/jsp/teacher.jsp" />
-        <option value="$PROJECT_DIR$/web/css/teacher.css" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindHomeworkCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindDiaryCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllTeacherCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllSubjectCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllStudentCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllParentCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllGradeCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/BackJournalCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/BackHomeworkCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/BackDiaryCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Parent.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Admin.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Grade.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Student.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Subject.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/connection/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java" />
+        <option value="$PROJECT_DIR$/resources/i18n/messages_ru.properties" />
+        <option value="$PROJECT_DIR$/resources/i18n/messages_en.properties" />
+        <option value="$PROJECT_DIR$/resources/i18n/messages.properties" />
+        <option value="$PROJECT_DIR$/web/jsp/start.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/log4j2.xml" />
+        <option value="$PROJECT_DIR$/resources/log4j2.xml" />
       </list>
     </option>
   </component>
@@ -330,25 +439,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
               <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="i18n" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
@@ -368,95 +464,12 @@
               <item name="diary" type="462c0819:PsiDirectoryNode" />
               <item name="command" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="jstl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diary" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electronic diary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electronic diary" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,6 +490,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IdeaProjects\epam\electronic diary\resources" />
+      <recent name="C:\Users\ASUS\IdeaProjects\epam\electronic diary\web\WEB-INF" />
       <recent name="C:\Users\ASUS\IdeaProjects\epam\electronic diary" />
       <recent name="C:\Users\ASUS\IdeaProjects\epam\electronic diary\web\jsp" />
     </key>
@@ -500,13 +515,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="A (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.servlet.A" />
+    <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.dao.A" />
       <module name="electronic diary" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.garbuzov.diary.servlet.*" />
+          <option name="PATTERN" value="com.garbuzov.diary.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -514,13 +529,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.command.A" />
+    <configuration name="B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.dao.B" />
       <module name="electronic diary" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.garbuzov.diary.command.*" />
+          <option name="PATTERN" value="com.garbuzov.diary.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeworkService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.service.HomeworkService" />
+      <module name="electronic diary" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.garbuzov.diary.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -541,20 +570,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.garbuzov.diary.servlet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.garbuzov.diary.mail.a" />
-      <module name="electronic diary" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.garbuzov.diary.mail.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -687,17 +702,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.A" />
       <item itemvalue="Application.a" />
+      <item itemvalue="Application.HomeworkService" />
+      <item itemvalue="Application.B" />
+      <item itemvalue="Application.A" />
       <item itemvalue="Application.a (1)" />
-      <item itemvalue="Application.A (1)" />
       <item itemvalue="Tomcat Server.Tomcat 9.0" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.A (1)" />
         <item itemvalue="Application.a (1)" />
-        <item itemvalue="Application.a" />
+        <item itemvalue="Application.A" />
+        <item itemvalue="Application.B" />
+        <item itemvalue="Application.HomeworkService" />
       </list>
     </recent_temporary>
   </component>
@@ -747,12 +764,22 @@
       <workItem from="1552297771318" duration="5892000" />
       <workItem from="1552319912917" duration="23880000" />
       <workItem from="1552464141413" duration="29877000" />
-      <workItem from="1552577343653" duration="11864000" />
+      <workItem from="1552577343653" duration="21730000" />
+      <workItem from="1552642867589" duration="8030000" />
+      <workItem from="1552655312744" duration="3961000" />
+      <workItem from="1552661268888" duration="1527000" />
+      <workItem from="1552749199796" duration="12987000" />
+      <workItem from="1552820894751" duration="11487000" />
+      <workItem from="1552850230028" duration="3216000" />
+      <workItem from="1552900684331" duration="21902000" />
+      <workItem from="1553014139499" duration="17020000" />
+      <workItem from="1553077628990" duration="8674000" />
+      <workItem from="1553103477112" duration="605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398397000" />
+    <option name="totallyTimeSpent" value="497672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -771,25 +798,25 @@
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Web" order="3" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.16375838" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.18590604" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="14" weight="0.3286119" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.3286119" />
-      <window_info anchor="right" id="Database" order="0" weight="0.13422818" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.152349" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -801,446 +828,349 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableDeletionCommand.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="23" column="70" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/Transition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#503#504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherRegistrationCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/start.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="75" column="96" selection-start-line="74" selection-start-column="10" selection-end-line="75" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/teacher_subject">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/lesson">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/LessonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/GradeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/student">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/homework">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/TeacherDeletionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/doskort.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="238" column="14" selection-start-line="238" selection-start-column="14" selection-end-line="238" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableAddCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="70" lean-forward="true" selection-start-line="12" selection-start-column="70" selection-end-line="13" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/timetable">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="232" column="105" selection-start-line="232" selection-start-column="105" selection-end-line="232" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectAddCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/SubjectUpdateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentUpdateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        <state relative-caret-position="289">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="das://c9562922-8bf0-461b-b698-2ed8a72c0c19/schema/diary/table/mark">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/StudentAddCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentRegistrationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/ParentDeletionCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/MarkAddCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="222">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/StudentDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonDeletionCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <element signature="method#add#0;class#StudentDao#0" />
-            <element signature="method#update#0;class#StudentDao#0" />
-            <element signature="method#close#0;class#StudentDao#0" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/connection/ConnectionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/LessonAddCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="222">
+          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/TimetableDeletionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/GradeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/LessonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/SubjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/ParentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="69" column="55" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/TimetableService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/MarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/TimetableDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="20" column="129" selection-start-line="20" selection-start-column="129" selection-end-line="20" selection-end-column="129" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Homework.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/LanguageSwitchCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/HomeworkDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/HomeworkAddCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/HomeworkService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeUpdateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/service/MarkService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeForTeacherCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="222">
+          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardJournalCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="57" column="56" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardHomeworkCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/ForwardDiaryCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindJournalCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="41" column="70" lean-forward="true" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+        <state relative-caret-position="222">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindHomeworkCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindDiaryCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllTeacherCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllSubjectCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllStudentCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllParentCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/CommandType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/BackJournalCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="57" column="56" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/BackHomeworkCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/dao/impl/AdminDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Admin.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/BackDiaryCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/script/teacher.js">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Grade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="352">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/teacher.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Parent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="231" column="23" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="23" />
+        <state relative-caret-position="629">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/teacher.css">
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/LessonDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+        <state relative-caret-position="595">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="69" column="53" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding>
+            <element signature="e#1411#1412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/filter/UserFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/mail/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/connection/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/connection.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/smtp.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/servlet/MainServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/i18n/messages_ru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/i18n/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/i18n/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Triangle/src/com/garbuzov/triangle/reader/PointReader.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/SignUpCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/start.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="77" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/FindAllGradeCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/garbuzov/diary/command/GradeAddCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/parent.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="107" selection-start-line="3" selection-start-column="107" selection-end-line="3" selection-end-column="107" />
         </state>
       </provider>
     </entry>
